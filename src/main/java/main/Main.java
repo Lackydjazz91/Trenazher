@@ -15,10 +15,11 @@ public class Main {
         System.out.println(l3);
 
         // 2. Измените координаты точек начала и конца Линии 3 таким образом, чтобы изменились все три объекта Линии
-        l1.getEnd().setX(40);
-        l1.getEnd().setY(96);
-        l2.getStart().setX(120);
-        l2.getStart().setY(212);
+        l3.getStart().setX(40);
+        l3.getStart().setY(96);
+        l3.getEnd().setX(120);
+        l3.getEnd().setY(212);
+
 
         // 3. Выведите текстовое представление Линии 3 на экран после изменения её состояния
         System.out.println(l3);
