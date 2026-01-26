@@ -6,33 +6,46 @@ import java.util.Arrays;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Line l1 = new Line(1, 3, 5, 8);
-        Line l2 = new Line(10, 11, 15, 19);
-        Line l3 = new Line(l1.getEnd(), l2.getStart());
 
+        Point t1 = new Point(1, 5);
+        Point t2 = new Point(2, 8);
+        Point t3 = new Point(5, 3);
+        Point t4 = new Point(8, 9);
 
-        // 1. Выведите текстовое представление Линии 3 на экран
-        System.out.println(l3);
+        Point[] points = new Point[]{t1, t2, t3, t4};
 
-        // 2. Измените координаты точек начала и конца Линии 3 таким образом, чтобы изменились все три объекта Линии
-        l3.getStart().setX(40);
-        l3.getStart().setY(96);
-        l3.getEnd().setX(120);
-        l3.getEnd().setY(212);
+        PolyLine polyLine = new PolyLine(points);//Создать Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}, {8,9}
+        System.out.println("Ломаная: " + polyLine);
 
+        double polyLineLength = polyLine.getLength(); // Рассчитать длину Ломаной
+        System.out.println("Длина ломаной: " + polyLineLength);
 
-        // 3. Выведите текстовое представление Линии 3 на экран после изменения её состояния
-        System.out.println(l3);
+        Line[] arrLines = polyLine.getLines();// Получить у Ломаной массив Линий
+        System.out.println("Количество линий в ломаной: " + arrLines.length);
 
-        // 4. Рассчитайте суммарную длину всех трех линий и выведите её на экран
+        double lengthArrLines = 0.0; // Рассчитать длину массива Линий
+        for (int i = 0; i < arrLines.length; i++) {
+            lengthArrLines = lengthArrLines + arrLines[i].getLength();
+        }
+        System.out.println("Сумма всех линий " + lengthArrLines);
 
-        double a = l1.getLength();
-        double b = l2.getLength();
-        double c = l3.getLength();
+        System.out.println(polyLine.getLength() == lengthArrLines); // Сравнить длину Ломаной и массива Линий: они должны совпасть
 
-        double x = a + b + c;
+        System.out.println("Старые координаты точки: " + t2);
+        System.out.println("Старые данные по ломаной: " + polyLine);
+        System.out.println("Массив линий до изменения: ");
+        for (int i = 0; i < arrLines.length; i++) {
+            System.out.println(arrLines[i]);
+        }
 
-        System.out.println("Cуммарная длина всех трех линий = " + x);
+        t2.setX(12); // Изменить координаты Точки {2,8} (поменяли только x т.к. y значение не меняет)
+
+        System.out.println("Новые координаты точки: " + t2);
+        System.out.println("Новые данные по ломаной: " + polyLine);
+        System.out.println("Массив линий после изменения: ");
+        for (int i = 0; i < arrLines.length; i++) {
+            System.out.println(arrLines[i]);
+        }
 
     }
 }

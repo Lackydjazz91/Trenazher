@@ -1,8 +1,8 @@
 package main;
 
 public class Line {
-   private Point start;
-   private Point end;
+    private Point start;
+    private Point end;
 
     Line(Point start, Point end) {
         this.start = start;
