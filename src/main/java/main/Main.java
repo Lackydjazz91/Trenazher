@@ -6,10 +6,10 @@ import java.util.Arrays;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Fraction f1 = new Fraction(1,3);
-        Fraction f2 = new Fraction(2,5);
-        Fraction f3 = new Fraction(7,8);
-
-        System.out.println(f1.sum(f2).sum(f3).minus(5));
+        int[] grades = new int[]{3,4,5,5,5,5,5,5};
+        Student s = new Student("Mark", grades);
+        s.addGrades(5);
+        int[] valueGrades = s.getGrades();
+        System.out.println(Arrays.toString(valueGrades));
     }
 }
