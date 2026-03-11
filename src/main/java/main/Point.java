@@ -1,8 +1,7 @@
 package main;
 
 public class Point {
-    int x;
-    int y;
+    int x, y;
 
     Point(int x, int y) {
         this.x = x;
@@ -30,3 +29,4 @@ public class Point {
         return "{" + x + ";" + y + "}";
     }
 }
+

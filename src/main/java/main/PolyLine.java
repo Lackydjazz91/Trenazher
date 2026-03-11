@@ -2,11 +2,8 @@ package main;
 
 import java.util.Arrays;
 
-public class PolyLine {
-    Point[] points = new Point[6];
-
-    PolyLine() {
-    }
+public class PolyLine implements Measurable {
+    Point[] points;
 
     PolyLine(Point[] arr) {
         this.points = arr;
@@ -44,6 +41,4 @@ public class PolyLine {
 
         return totalLength;
     }
-
-
 }

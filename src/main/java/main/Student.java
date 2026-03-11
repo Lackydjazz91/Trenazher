@@ -35,7 +35,7 @@ public class Student {
         }
     }
 
-    public void addGrades(int grade) {
+    public void addGrade(int grade) {
         if (grade < 2 || grade > 5) {
             throw new IllegalArgumentException("Оценка должна быть от 2 до 5");
         }

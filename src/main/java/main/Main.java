@@ -6,10 +6,13 @@ import java.util.Arrays;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int[] grades = new int[]{3,4,5,5,5,5,5,5};
-        Student s = new Student("Mark", grades);
-        s.addGrades(5);
-        int[] valueGrades = s.getGrades();
-        System.out.println(Arrays.toString(valueGrades));
+        Point[] points = { new Point(0,0), new Point(3,0), new Point(3,4), new Point(0,4)};
+            Line line = new Line(0,0,3,4);
+            PolyLine polyLine = new PolyLine(points);
+            ClosedPolyLine closedPolyLine = new ClosedPolyLine(points);
+
+        System.out.println(line.getLength());
+        System.out.println(polyLine.getLength());
+        System.out.println(closedPolyLine.getLength());
     }
 }

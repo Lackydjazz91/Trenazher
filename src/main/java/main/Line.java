@@ -1,6 +1,6 @@
 package main;
 
-public class Line {
+public class Line implements Measurable {
     private Point start;
     private Point end;
 
@@ -34,6 +34,7 @@ public class Line {
     public String toString() {
         return "Линия от " + start + " до " + end;
     }
+
 
     public double getLength() {
         int deltaX = end.getX() - start.getX();
