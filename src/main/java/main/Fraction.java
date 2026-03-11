@@ -1,45 +1,34 @@
 package main;
 
-public class Fraction {
-    private final int numerator;
-    private final int denominator;
+public class Fraction extends Number {
+    int num, denum;
 
-    public Fraction(int numerator, int denominator) {
-        if (denominator <= 0) throw new IllegalArgumentException();
+    public Fraction(int num, int denum) {
+        this.num = num;
+        this.denum = denum;
+    }
 
-        this.numerator = numerator;
-        this.denominator = denominator;
+    public String toString() {
+        return num + "/" + denum;
     }
 
     @Override
-    public String toString() {
-        return numerator + " / " + denominator;
+    public int intValue() {
+        return num / denum;
     }
 
-    public Fraction sum(Fraction other ) {
-        int commonDenominator = this.denominator * other.denominator;
-        int commonNumerator = (other.denominator * this.numerator) + (this.denominator * other.numerator);
-        return new Fraction(commonNumerator, commonDenominator);
+    @Override
+    public long longValue() {
+        return (long)num / denum;
     }
 
-    public Fraction minus(Fraction other) {
-        int commonDenominator = this.denominator * other.denominator;
-        int commonNumerator = (other.denominator * this.numerator) - (this.denominator * other.numerator);
-        return new Fraction(commonNumerator, commonDenominator);
+    @Override
+    public float floatValue() {
+        return (float) num / denum;
     }
 
-    public Fraction sum(int number ) {
-        Fraction numberAsFraction = new Fraction(number, 1);
-        int commonDenominator = this.denominator * numberAsFraction.denominator;
-        int commonNumerator = (this.numerator * numberAsFraction.denominator) - (numberAsFraction.numerator * this.denominator);
-        return new Fraction(commonNumerator, commonDenominator);
-
-    }
-
-    public Fraction minus(int number) {
-        Fraction numberAsFraction = new Fraction(number, 1);
-        int commonDenominator = this.denominator * numberAsFraction.denominator;
-        int commonNumerator = (this.numerator * numberAsFraction.denominator) - (numberAsFraction.numerator * this.denominator);
-        return new Fraction(commonNumerator, commonDenominator);
+    @Override
+    public double doubleValue() {
+        return (double) num / denum;
     }
 }
