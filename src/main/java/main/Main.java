@@ -6,13 +6,13 @@ import java.util.Arrays;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Point[] points = { new Point(0,0), new Point(3,0), new Point(3,4), new Point(0,4)};
-            Line line = new Line(0,0,3,4);
-            PolyLine polyLine = new PolyLine(points);
-            ClosedPolyLine closedPolyLine = new ClosedPolyLine(points);
+        Fraction f1 = new Fraction(3,5);
+        Fraction f2 = new Fraction(49,12);
+        Fraction f3 = new Fraction(3,2);
+        Fraction f4 = new Fraction(1,3);
 
-        System.out.println(line.getLength());
-        System.out.println(polyLine.getLength());
-        System.out.println(closedPolyLine.getLength());
+        System.out.println(MathUtils.sumAll(2,f1,2.3));
+        System.out.println(MathUtils.sumAll(3.6,f2,3,f3));
+        System.out.println(MathUtils.sumAll(f4,1));
     }
 }

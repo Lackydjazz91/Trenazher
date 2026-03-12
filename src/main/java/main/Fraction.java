@@ -19,7 +19,7 @@ public class Fraction extends Number {
 
     @Override
     public long longValue() {
-        return (long)num / denum;
+        return (long) num / denum;
     }
 
     @Override
